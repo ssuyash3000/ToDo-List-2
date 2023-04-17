@@ -131,7 +131,7 @@ function handleClick(e) {
   }
 }
 function handleKey(e) {
-  const target = e.target;
+  const target = e.key;
   if (target == "Enter") {
     addTask();
   }
