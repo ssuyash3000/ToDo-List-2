@@ -19,7 +19,7 @@ function addTaskToDOM(task) {
   const li = document.createElement("li");
   li.innerHTML = `
     <input type="checkbox" id="${task.id}" ${
-    task.done ? "checked" : ""
+    task.completed ? "checked" : ""
   } class="custom-checkbox">
     <label for="${task.id}" id = "task-name">${task.title}</label>
     <img src="bin.svg" class = "delete" data-id = "${task.id}">    
