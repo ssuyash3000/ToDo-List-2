@@ -14,6 +14,37 @@ function giveMessage(message, task = null) {
     ele.innerHTML += `<div> <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     ${message} </div>`;
 }
+//Fetching the dummy list
+function fetchToDos() {
+  //GET request
+  //fetch function will return a promise, hence we are using .then() function on it
+  fetch("https://jsonplaceholder.typicode.com/todos").then((response) => {
+    //response will be an object, if the object has status propertey set as 200
+    // that the GET req. was successful.
+    //Now we convert this respose into JSON
+    //.json() will return a promise with the ToDo items in JSON format
+    //hence we again do .then() on it
+    return (
+      response
+        .json()
+        .then((data) => {
+          //This data will be acutal array of Dummy Todos
+          // for (let i = 0; i < 5; i++) {
+          //   taskListArr.push(data[i]);
+          // }
+          taskListArr = data.slice(0, 5);
+          renderList();
+          giveMessage("5 dummy ToDos added");
+        })
+        //.catch() in case we get an error
+        .catch((error) => {
+          console.log("error");
+          giveMessage(error);
+        })
+    );
+  });
+}
+
 //Pushing Task in the List inside DOM
 function addTaskToDOM(task) {
   const li = document.createElement("li");
@@ -36,11 +67,13 @@ function renderList() {
 }
 // DELETE BUTTON
 function deleteTask(taskId) {
+  //here taskId will contain a string as it is being fetched from
+  //html element, where as task.id will be a number
   const newTasks = taskListArr.filter(function (task) {
-    return task.id !== taskId;
+    return task.id !== Number(taskId);
   });
   const deletedTask = taskListArr.filter(function (task) {
-    return task.id === taskId;
+    return task.id === Number(taskId);
   });
   taskListArr = [...newTasks];
   renderList();
@@ -50,7 +83,9 @@ function deleteTask(taskId) {
 //CHECK BOX
 function markTaskAsComplete(taskId) {
   const currtask = taskListArr.filter(function (task) {
-    return task.id === taskId;
+    //here taskId will contain a string as it is being fetched from
+    //html element, where as task.id will be a number
+    return task.id === Number(taskId);
   });
 
   if (currtask.length > 0) {
@@ -101,7 +136,7 @@ function addTask() {
   if (text.length !== 0) {
     const task = {
       title: text,
-      id: Date.now().toString(),
+      id: Date.now(),
       completed: false,
     };
     taskListArr.push(task);
@@ -136,5 +171,9 @@ function handleKey(e) {
     addTask();
   }
 }
-document.addEventListener("click", handleClick);
-document.addEventListener("keyup", handleKey);
+function appInitialize() {
+  document.addEventListener("click", handleClick);
+  document.addEventListener("keyup", handleKey);
+  fetchToDos();
+}
+appInitialize();
