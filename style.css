@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: radial-gradient(
+      circle closest-corner at center 125px,
+      #6ba8a2,
+      black 99%
+    )
+    no-repeat;
+  color: antiquewhite;
+}
+
+#container {
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 40xp;
+  border-radius: 40xp;
+}
+
+.btn,
+#alert,
+#add {
+  border-radius: 40px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid #e5e5e5; */
+}
+ul li {
+  padding: 10px;
+  /* padding-left: 0; */
+  display: flex;
+  justify-content: space-between;
+  align-items: inherit;
+  align-items: center;
+}
+ul li:hover {
+  background: #f3f3f3;
+  color: black;
+  border-radius: 35%;
+}
+#list input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+#list label {
+  position: relative;
+  cursor: pointer;
+}
+
+#list label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #0079bf;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#list input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+#list input:checked + label:before {
+  background: #0079bf;
+}
+#list input:checked + label {
+  text-decoration: line-through;
+}
+.delete {
+  height: 28px;
+  padding: 5px 0px;
+  border-radius: 3px;
+  /* display: none; */
+}
+.delete:hover {
+  background: #f2f2f2;
+  cursor: pointer;
+  /* display: block; */
+}
+h1 {
+  text-align: center;
+}
+.add-task {
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  padding: 11px;
+  border: 1px solid #f3f3f3;
+  margin-bottom: 3px;
+}
+#total-tasks {
+  margin-bottom: 20px;
+  font-size: 13px;
+  margin-left: 2px;
+  color: antiquewhite;
+}
+
+/* Dropdown Button */
+.btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 30px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+#clearToDos:hover {
+  background-color: red;
+}
+#sort:hover {
+  background-color: palevioletred;
+}
+#addTask:hover {
+  background-color: blue;
+}
+
+/* The alert message box */
+#alert {
+  padding: 20px;
+  background-color: #f18f8f; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  display: inline-block;
+  margin-left: 75%;
+  position: fixed;
+  overflow: auto;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
