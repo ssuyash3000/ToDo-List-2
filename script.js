@@ -130,5 +130,11 @@ function handleClick(e) {
     deleteTask(taskId);
   }
 }
-
+function handleKey(e) {
+  const target = e.target;
+  if (target == "Enter") {
+    addTask();
+  }
+}
 document.addEventListener("click", handleClick);
+document.addEventListener("keyup", handleKey);
