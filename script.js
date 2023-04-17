@@ -9,7 +9,7 @@ function giveMessage(message, task = null) {
   //&times used to create the x btn
   if (task !== null)
     ele.innerHTML += `<div> <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    ${task.text} ${message} </div>`;
+    ${task.title} ${message} </div>`;
   else
     ele.innerHTML += `<div> <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     ${message} </div>`;
@@ -21,7 +21,7 @@ function addTaskToDOM(task) {
     <input type="checkbox" id="${task.id}" ${
     task.done ? "checked" : ""
   } class="custom-checkbox">
-    <label for="${task.id}" id = "task-name">${task.text}</label>
+    <label for="${task.id}" id = "task-name">${task.title}</label>
     <img src="bin.svg" class = "delete" data-id = "${task.id}">    
     `;
   taskList.append(li);
@@ -56,10 +56,10 @@ function markTaskAsComplete(taskId) {
   if (currtask.length > 0) {
     const currentTask = currtask[0];
 
-    currentTask.done = !currentTask.done;
-    if (currentTask.done === true)
-      giveMessage("You Completed Task " + currentTask.text);
-    else giveMessage("Your Task " + currentTask.text + " is still incomplete");
+    currentTask.completed = !currentTask.completed;
+    if (currentTask.completed === true)
+      giveMessage("You Completed Task " + currentTask.title);
+    else giveMessage("Your Task " + currentTask.title + " is still incomplete");
     renderList();
     return;
   } else {
@@ -68,7 +68,7 @@ function markTaskAsComplete(taskId) {
 }
 //Comparator Functions for sort()
 function sortAccToName(a, b) {
-  return a.text.localeCompare(b.text);
+  return a.title.localeCompare(b.title);
 }
 function sortAccToTime(a, b) {
   return a.id - b.id;
@@ -100,9 +100,9 @@ function addTask() {
   const text = inputBar.value;
   if (text.length !== 0) {
     const task = {
-      text: text,
+      title: text,
       id: Date.now().toString(),
-      done: false,
+      completed: false,
     };
     taskListArr.push(task);
     renderList();

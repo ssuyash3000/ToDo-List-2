@@ -5,8 +5,8 @@
 body {
   background: radial-gradient(
       circle closest-corner at center 125px,
-      #6ba8a2,
-      black 99%
+      #1a524c,
+      rgb(17, 13, 39) 99%
     )
     no-repeat;
   color: antiquewhite;
