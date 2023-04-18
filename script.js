@@ -14,35 +14,45 @@ function giveMessage(message, task = null) {
     ele.innerHTML += `<div> <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     ${message} </div>`;
 }
-//Fetching the dummy list
-function fetchToDos() {
-  //GET request
-  //fetch function will return a promise, hence we are using .then() function on it
-  fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((response) => {
-      //response will be an object, if the object has status propertey set as 200
-      // that the GET req. was successful.
-      //Now we convert this respose into JSON
-      //.json() will return a promise with the ToDo items in JSON format
-      //hence we again do .then() on it
-      return response.json();
-    })
-    .then((data) => {
-      //This data will be acutal array of Dummy Todos
-      // for (let i = 0; i < 5; i++) {
-      //   taskListArr.push(data[i]);
-      // }
-      taskListArr = data.slice(0, 5);
-      renderList();
-      giveMessage("5 dummy ToDos added");
-    })
-    //.catch() in case we get an error
-    .catch((error) => {
-      console.log("error");
-      giveMessage(error);
-    });
+//Fetching the dummy list - Promise
+// function fetchToDos() {
+//   //GET request
+//   //fetch function will return a promise, hence we are using .then() function on it
+//   fetch("https://jsonplaceholder.typicode.com/todos")
+//     .then((response) => {
+//       //response will be an object, if the object has status propertey set as 200
+//       // that the GET req. was successful.
+//       //Now we convert this respose into JSON
+//       //.json() will return a promise with the ToDo items in JSON format
+//       //hence we again do .then() on it
+//       return response.json();
+//     })
+//     .then((data) => {
+//       //This data will be acutal array of Dummy Todos
+//       // for (let i = 0; i < 5; i++) {
+//       //   taskListArr.push(data[i]);
+//       // }
+//       taskListArr = data.slice(0, 5);
+//       renderList();
+//       giveMessage("5 dummy ToDos added");
+//     })
+//     //.catch() in case we get an error
+//     .catch((error) => {
+//       console.log("error");
+//       giveMessage(error);
+//     });
+// }
+//Fetching the dummy list - Promise using Aysnc Await Syntax
+async function fetchToDos() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await response.json();
+    taskListArr = data.slice(5, 10);
+    renderList();
+  } catch (error) {
+    console.log(error);
+  }
 }
-
 //Pushing Task in the List inside DOM
 function addTaskToDOM(task) {
   const li = document.createElement("li");
