@@ -51,7 +51,7 @@ var app = (function () {
         "https://jsonplaceholder.typicode.com/todos"
       );
       const data = await response.json();
-      taskListArr = data.slice(5, 10);
+      taskListArr = data.slice(10, 16);
       renderList();
       giveMessage("5 dummy ToDos added");
     } catch (error) {
