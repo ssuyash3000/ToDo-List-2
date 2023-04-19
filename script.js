@@ -49,6 +49,7 @@ async function fetchToDos() {
     const data = await response.json();
     taskListArr = data.slice(5, 10);
     renderList();
+    giveMessage("5 dummy ToDos added");
   } catch (error) {
     console.log(error);
   }
