@@ -2,13 +2,21 @@
 
 # Functionality that the app should have -
 
-> Adding To-Do
+  > Adding To-Do
 
-> Deleting To-Do
+  > Deleting To-Do
 
-> Check Task
+  > Check To-Do (marking as completed)
+  
+  > Sorting To-Do
 
-> Total Items Count
+  > Total Items Count
+
+#Data -
+
+  > taskList Array
+
+  > task object {title: "", id: "", completed: ""}
 
 # Some extra functionality -
 
