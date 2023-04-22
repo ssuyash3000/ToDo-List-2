@@ -4,19 +4,21 @@
 }
 body {
   background: radial-gradient(
-      circle closest-corner at center 125px,
-      #1a524c,
-      rgb(17, 13, 39) 99%
+      circle closest-corner at center 500px,
+      #2f3e6f,
+      rgb(0, 0, 0) 99%
     )
     no-repeat;
-  /* background-size: contain; */
-
+  /* height: 100vh;
+  width: 100vw; */
+  background-size: cover;
+  background-attachment: fixed;
   color: antiquewhite;
+
   /* Set a specific height
   min-height: 500px; */
-
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   /* background-position: center; */
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
@@ -50,8 +52,13 @@ ul li {
   align-items: center;
 }
 ul li:hover {
-  background: #f3f3f3;
-  color: black;
+  background: radial-gradient(
+      circle closest-corner at center 125px,
+      #2f3e6f,
+      rgb(0, 0, 0) 99%
+    )
+    no-repeat;
+  color: whitesmoke;
   border-radius: 35%;
 }
 #list input {
@@ -107,7 +114,7 @@ ul li:hover {
   /* display: none; */
 }
 .delete:hover {
-  background: #f2f2f2;
+  background: black;
   cursor: pointer;
   /* display: block; */
 }
@@ -190,8 +197,8 @@ h1 {
 #alert {
   background: radial-gradient(
       circle closest-corner at center 125px,
-      #1a524c,
-      rgb(17, 13, 39) 99%
+      #053bec,
+      rgb(0, 0, 0) 99%
     )
     no-repeat;
   padding: 20px;
