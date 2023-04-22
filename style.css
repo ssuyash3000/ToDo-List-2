@@ -9,7 +9,7 @@ body {
       rgb(17, 13, 39) 99%
     )
     no-repeat;
-  background-size: contain;
+  /* background-size: contain; */
 
   color: antiquewhite;
   /* Set a specific height
@@ -17,9 +17,9 @@ body {
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
 }
 
 #container {
