@@ -9,7 +9,17 @@ body {
       rgb(17, 13, 39) 99%
     )
     no-repeat;
+  background-size: contain;
+
   color: antiquewhite;
+  /* Set a specific height
+  min-height: 500px; */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #container {
@@ -178,6 +188,12 @@ h1 {
 
 /* The alert message box */
 #alert {
+  background: radial-gradient(
+      circle closest-corner at center 125px,
+      #1a524c,
+      rgb(17, 13, 39) 99%
+    )
+    no-repeat;
   padding: 20px;
   background-color: #f18f8f; /* Red */
   color: white;

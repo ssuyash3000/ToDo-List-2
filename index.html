@@ -1,48 +1,48 @@
-<<!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Todo</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    </head>
+</head>
 
-    <body>
-        <div id="alert">
-            Notifications ->
+<body>
+    <div id="alert">
+        Notifications ->
 
-        </div>
-        <h1>Todo List App</h1>
+    </div>
+    <h1>Todo List App</h1>
 
-        <div id="container">
-            <input placeholder="To Add a task - click ADD or click <-l" class="add-task" id="add">
-            <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
+    <div id="container">
+        <input placeholder="To Add a task - click ADD or click <-l" class="add-task" id="add">
+        <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
 
-            <div>
-                <button id="addTask" class="btn">ADD</button>
-                <button id="clearToDos" class="btn">CLEAR</button>
-                <div class="dropdown">
-                    <button id="sort" class="btn">SORT</button>
-                    <div class="dropdown-content">
-                        <a id="time">Sort By Time Added</a>
-                        <a id="name">Sort By Name</a>
+        <div>
+            <button id="addTask" class="btn">ADD</button>
+            <button id="clearToDos" class="btn">CLEAR</button>
+            <div class="dropdown">
+                <button id="sort" class="btn">SORT</button>
+                <div class="dropdown-content">
+                    <a id="time">Sort By Time Added</a>
+                    <a id="name">Sort By Name</a>
 
-                    </div>
                 </div>
             </div>
-            <ul id="list">
-
-            </ul>
-
         </div>
+        <ul id="list">
 
-        <script src="script.js"></script>
-        <script>
-            app.start();
-        </script>
-    </body>
+        </ul>
 
-    </html>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        app.start();
+    </script>
+</body>
+
+</html>
