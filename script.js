@@ -11,7 +11,7 @@ var app = (function () {
     //&times used to create the x btn
     if (task !== null)
       ele.innerHTML += `<div> <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    ${task.title} ${message} </div>`;
+    "${task.title}"  ${message} </div>`;
     else
       ele.innerHTML += `<div> <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     ${message} </div>`;
