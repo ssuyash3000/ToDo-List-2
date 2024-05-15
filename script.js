@@ -61,6 +61,7 @@ var app = (function () {
   //Pushing Task in the List inside DOM
   function addTaskToDOM(task) {
     const li = document.createElement("li");
+    li.setAttribute("id", task.id);
     li.innerHTML = `
     <input type="checkbox" id="${task.id}" ${
       task.completed ? "checked" : ""
@@ -89,7 +90,8 @@ var app = (function () {
       return task.id === Number(taskId);
     });
     taskListArr = [...newTasks];
-    renderList();
+    document.getElementById(taskId).remove();
+    //renderList();
     giveMessage("Tasks Deleted", deletedTask[0]);
     return;
   }
